@@ -41,6 +41,9 @@
         }
 
         div.rightMenu span{
+            display: inline-block;
+            width: 75px;
+            text-align: center;
             margin-left: 40px;
         }
 
@@ -66,11 +69,39 @@
             top: 36px;
             z-index: -1;
         }
+
+        #catear {
+            position: absolute;
+            width: 50px;
+            display: none;
+        }
+
     </style>
+
+    <script>
+        $(function (){
+            $("div.rightMenu span").mouseenter(function (){
+                var top = $(".rightMenu").position().top;
+                var width = $(this).css("width");
+                var left = $(this).position().left;
+                // var destLeft = parseInt(left) + parseInt(width)/2;
+                var destLeft = parseInt(left) + parseInt(width)*2/3;
+
+                var catearSelector = $("#catear");
+                catearSelector.css("top",parseInt(top)-20);
+                catearSelector.css("left",destLeft);
+                catearSelector.fadeIn(500);
+            });
+
+            $("div.rightMenu span").mouseleave();
+        });
+    </script>
 </head>
 <body>
 
+    <div style="height: 50px"></div>
     <div class="categoryWithCarousel">
+        <img id="catear" src="../../img/site/catear.png" alt="">
         <!--导航栏-->
         <div class="headerBar">
             <div class="head">
