@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="../../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+    <style>
+        .categoryPageDiv {
+            max-width: 1013px;
+            margin: 10px auto;
+        }
+
+        .categorySortBar{
+            background-color: #FAF9F9;
+            margin: 40px 20px 20px 20px;
+            padding: 4px;
+        }
+
+        .categorySortBarTable{
+            border-collapse: collapse;
+            display:inline-block;
+        }
+
+        table.categorySortBarTable span.glyphicon{
+            font-size: 14px;
+        }
+
+        table.categorySortBarTable td{
+            height:30px;
+            border:1px solid #CCCCCC;
+            padding:3px;
+        }
+
+        table.categorySortBarTable td a:hover{
+            color: #C40000;
+        }
+
+        .tablePrice input{
+            border-width: 0px;
+            height: 20px;
+            width: 50px;
+        }
+
+        .grayColumn{
+            background-color: #F1EDEC;
+            color: #CCCCCC;
+        }
+
+        .tableSortLink td:hover{
+            background-color: #F1EDEC;
+        }
+
+        body{
+            font-size: 12px ;
+            font-family: Arial;
+        }
+    </style>
+
+    <script>
+
+    </script>
+
+</head>
+<body>
+
+    <div class="categoryPageDiv">
+        <img src="../../img/category/72.jpg" alt="">
+
+        <div class="categorySortBar">
+            <table class="categorySortBarTable tableSortLink">
+                <tbody>
+                    <tr>
+                        <td><a href="#">综合<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+                        <td><a href="#">人气<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+                        <td><a href="#">新品<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+                        <td><a href="#">销量<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+                        <td><a href="#">价格<span class="glyphicon glyphicon-resize-vertical"></span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="categorySortBarTable tablePrice">
+                <tbody>
+                <tr>
+                    <td><input type="text" placeholder="请输入"></td>
+                    <td class="grayColumn">-</td>
+                    <td><input type="text" placeholder="请输入"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>

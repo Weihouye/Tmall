@@ -93,7 +93,9 @@
                 catearSelector.fadeIn(500);
             });
 
-            $("div.rightMenu span").mouseleave();
+            $("div.rightMenu span").mouseleave(function () {
+                $("#catear").hide();
+            });
         });
     </script>
 </head>
