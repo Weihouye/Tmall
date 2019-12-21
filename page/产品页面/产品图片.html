@@ -42,6 +42,31 @@
             border: 2px solid black;
         }
     </style>
+
+    <script>
+        $(function () {
+            $(".smallImg").mouseenter(function () {
+                let bigImgURL = $(this).attr("bigImgURL");
+                $(".bigImg").attr("src",bigImgURL);
+            });
+
+            $(".bigImg").load(function () {
+                $(".smallImg").each(function () {
+                    let bigImgURL = $(this).attr("bigImgURL");
+
+                    let img = new Image();
+                    console.log(typeof(img));
+                    img.src = bigImgURL;
+                    img.onload = function () {
+                        console.log(bigImgURL);
+                        $(".img4load").append($(img));
+                    }
+
+                });
+            });
+        })
+
+    </script>
 </head>
 <body>
 
@@ -50,12 +75,14 @@
             <img class="bigImg" src="../../img/productSingle/8619.jpg" alt="">
 
             <div class="smallImgDiv">
-                <img class="smallImg" src="../../img/productSingle_small/8620.jpg" alt="">
-                <img class="smallImg" src="../../img/productSingle_small/8619.jpg" alt="">
-                <img class="smallImg" src="../../img/productSingle_small/8618.jpg" alt="">
-                <img class="smallImg" src="../../img/productSingle_small/8617.jpg" alt="">
-                <img class="smallImg" src="../../img/productSingle_small/8616.jpg" alt="">
+                <img class="smallImg" src="../../img/productSingle_small/8620.jpg" bigImgURL="../../img/productSingle/8620.jpg">
+                <img class="smallImg" src="../../img/productSingle_small/8619.jpg" bigImgURL="../../img/productSingle/8619.jpg">
+                <img class="smallImg" src="../../img/productSingle_small/8618.jpg" bigImgURL="../../img/productSingle/8618.jpg">
+                <img class="smallImg" src="../../img/productSingle_small/8617.jpg" bigImgURL="../../img/productSingle/8617.jpg">
+                <img class="smallImg" src="../../img/productSingle_small/8616.jpg" bigImgURL="../../img/productSingle/8616.jpg">
             </div>
+
+            <div class="img4load hidden" ></div>
         </div>
         <div style="clear:both"></div>
     </div>

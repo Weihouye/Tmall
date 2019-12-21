@@ -237,7 +237,43 @@
     </style>
 
     <script>
+        $(function () {
+            let storeNum = parseInt($(".storeNum").text()); //获取库存数量
 
+            //设置购买数量，输入值[1,库存数量]；当输入值不为整数时，为之前的数值；
+            $(".productNumberSetting").keyup(function () {
+
+                let num = $(this).val();
+                if (num.length === 0) {
+                    return;   //输入框清空时,直接返回结束；
+                }
+
+                num = parseInt(num);
+
+                if (isNaN(num) || num < 1) num = 1;  //当解析结果为NaN，则自动将输入框设置为1；或者输入数值小于1时，将输入框设置为1
+                if (num > storeNum) num = storeNum;  //当输入数值大于库存时，将其设置为库存数量
+                $(this).val(num);
+            });
+
+            //设置数据增减的按键动作
+            $(".upArrowSpan").click(function () {
+                let num = $(".productNumberSetting").val(); //获取输入框数值
+                num = parseInt(num);
+                if (isNaN(num)) num = 0;
+                if (num >= storeNum) return;
+                num++;
+                $(".productNumberSetting").val(num);
+            });
+
+            $(".downArrowSpan").click(function () {
+                let num = $(".productNumberSetting").val(); //获取输入框数值
+                num = parseInt(num);
+                if (isNaN(num)) num = 0;
+                if (num <= 1) return;
+                num--;
+                $(".productNumberSetting").val(num);
+            });
+        })
     </script>
 </head>
 <body>
