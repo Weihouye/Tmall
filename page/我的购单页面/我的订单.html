@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="../../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+    <style>
+        .boughtDiv{
+            max-width: 1013px;
+            margin: 10px auto;
+        }
+
+        .orderType div{
+            float: left;
+            border-bottom: 2px solid #e8e8e8;
+        }
+
+        div.orderType a{
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            border-right: 1px solid #E8E8E8;
+            text-decoration: none;
+            padding: 0 20px;
+            display: inline-block;  /*设置display:inline-block之后，margin-bottom才能生效*/
+            margin-bottom: 10px;
+        }
+
+        div.orderType a:hover{
+            color: #C40000;
+        }
+
+        .noRightborder a{
+            border-right-width: 0px !important;
+        }
+
+        .orderTypeLastOne{
+            float: none !important;
+            height: 35px;
+            border-bottom: 2px solid #e8e8e8;
+        }
+
+        .orderType .selectedOrderType{
+            border-bottom-color: #C40000;
+        }
+
+        .orderType .selectedOrderType a{
+            color: #C40000;
+        }
+
+        .orderListTitleTable{
+            background-color: #F5F5F5;
+            width: 100%;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid #E8E8E8;
+            font-size: 12px;
+        }
+        table.orderListTitleTable td{
+            /*padding: 12px 0px;*/
+            line-height: 40px;
+        }
+
+        table.orderItemTable{
+            width: 100%;
+        }
+
+        tr.orderItemTitleTr{
+            background-color: #f1f1f1;
+        }
+
+        table.orderItemTable td{
+            padding: 8px 10px;
+        }
+
+        .orderTimeSpan{
+            font-weight: bold;
+        }
+
+        .orderNoSpan{
+            margin-left: 8px;
+        }
+
+        .tmallMarketImg{
+            width: 20px;
+        }
+
+        img.orderProductImg{
+            width: 80px;
+            height: 80px;
+        }
+
+        .orderProductDescDiv{
+            position: relative;
+            height: 80px;
+        }
+
+        .orderProductDescDiv .rightsImgDiv{
+            position: absolute;
+            bottom: 0;
+        }
+
+        .orderProductDescDiv .rightsImgDiv img{
+            height: 16px;
+            width: 16px;
+        }
+
+        td.unitPriceTd{
+            width: 100px;
+        }
+
+        td.orderNumTd{
+            width: 100px;
+        }
+
+        td.realTotalCostTd{
+            width: 140px;
+        }
+
+        td.operationBtnTd{
+            width: 100px;
+        }
+
+        a.deleteOrderLink{
+            display: block;
+            text-align: center;
+        }
+
+        .deleteOrderLink .glyphicon-trash{
+            color: #999999;
+            font-size: 16px;
+        }
+
+        a.orderProductDescLink {
+            color: #999999;
+            text-decoration: none;
+        }
+
+        .orderProductDescLink:hover {
+            color: #C40000;
+        }
+
+        .unitPriceTd{
+            font-size: 14px;
+        }
+
+        .originalPriceItem{
+            color: #999999;
+        }
+
+        .freightDiv{
+            font-size: 12px;
+            color: #6c6c6c;
+        }
+
+        button.operationBtn{
+            width: 72px;
+            height: 28px;
+            border-radius: 2px;
+        }
+
+        button.reviewBtn{
+            border: 1px solid #dcdcdc;
+            background-color: #ffffff;
+            color: #3c3c3c;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        button.reviewBtn:hover{
+            color: #C40000;
+            border-color: #C40000;
+        }
+
+        button.confirmBtn{
+            border-width: 0px;
+            background-color: #66B6FF;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        button.confirmBtn:hover{
+            background-color: #118ADB;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="boughtDiv">
+        <div class="orderType">
+            <div class="selectedOrderType"><a href="#">所有订单</a></div>
+            <div><a href="#">待付款</a></div>
+            <div><a href="#">待发货</a></div>
+            <div><a href="#">待收款</a></div>
+            <div class="noRightborder"><a href="#">待评价</a></div>
+            <div class="orderTypeLastOne"></div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="orderListTitle">
+            <table class="orderListTitleTable">
+                <tbody>
+                    <tr>
+                        <td>宝贝</td>
+                        <td width="100px">单价</td>
+                        <td width="100px">数量</td>
+                        <td width="140px">实付款</td>
+                        <td width="100px">交易操作</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="orderListDiv">
+
+            <table class="orderItemTable">
+                <tr class="orderItemTitleTr">
+                    <td colspan="2" class="TimeAndOrderNoTd">
+                        <span class="orderTimeSpan">2016-09-12 17:00:41</span>
+                        <span class="orderNoSpan">订单号：<span class="orderNo">20160912170041674794</span></span>
+                    </td>
+                    <td colspan="2" class="TmallMarketImgTd">
+                        <img src="../../img/site/orderItemTmall.png" alt="" class="tmallMarketImg">天猫商场
+                    </td>
+                    <td class="wangwangTd"><a href="#" class="wangwangLink">
+                        <div class="wangwangGif"></div></a>
+                    </td>
+                    <td class="orderItemDeleteTD">
+                        <a href="#" class="deleteOrderLink"><span class="glyphicon glyphicon-trash"></span></a>
+                    </td>
+                </tr>
+                <tr class="orderItemInfoTr">
+                    <td class="orderProductImgTd">
+                        <img src="../../img/productSingle_middle/3796.jpg" alt="" class="orderProductImg">
+                    </td>
+                    <td class="orderProductDescTd">
+                        <div class="orderProductDescDiv">
+                            <a href="#" class="orderProductDescLink">公众智能扫地机器人家用全自动电动清洁地毯擦拖地一体机吸尘器</a>
+
+                            <div class="rightsImgDiv">
+                                <img src="../../img/site/creditcard.png" alt="" title="支持信用卡支付" class="rightsImg">
+                                <img src="../../img/site/7day.png" alt="" title="消费者保障服务,承诺7天退货" class="rightsImg">
+                                <img src="../../img/site/promise.png" alt="" title="消费者保障服务,承诺如实描述" class="rightsImg">
+                            </div>
+                        </div>
+                    </td>
+                    <td class="unitPriceTd text-center">
+                        <div class="originalPriceItem">￥<span class="originalPrice">2,499.00</span></div>
+                        <div class="oromotionPriceItem">￥<span class="oromotionPrice">2,499.00</span></div>
+                    </td>
+                    <td class="orderNumTd text-center">
+                        <span class="orderNum">1</span>
+                    </td>
+                    <td class="realTotalCostTd text-center">
+                        <div class="realTotalCostWithFreightDiv">￥<span class="realTotalCostWithFreight">2,124.15</span></div>
+                        <div class="freightDiv">(含运费：￥<span class="freight">10.00</span>)</div>
+                    </td>
+                    <td class="operationBtnTd text-center">
+                        <a class="operationLink" href="#"><button class="operationBtn reviewBtn">评价</button></a>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="orderItemTable">
+                <tr class="orderItemTitleTr">
+                    <td colspan="2" class="TimeAndOrderNoTd">
+                        <span class="orderTimeSpan">2016-09-12 17:00:33</span>
+                        <span class="orderNoSpan">订单号：<span class="orderNo">201609121700333128784</span></span>
+                    </td>
+                    <td colspan="2" class="TmallMarketImgTd">
+                        <img src="../../img/site/orderItemTmall.png" alt="" class="tmallMarketImg">天猫商场
+                    </td>
+                    <td class="wangwangTd"><a href="#" class="wangwangLink">
+                        <div class="wangwangGif"></div></a>
+                    </td>
+                    <td class="orderItemDeleteTD">
+                        <a href="#" class="deleteOrderLink"><span class="glyphicon glyphicon-trash"></span></a>
+                    </td>
+                </tr>
+                <tr class="orderItemInfoTr">
+                    <td class="orderProductImgTd">
+                        <img src="../../img/productSingle_middle/6651.jpg" alt="" class="orderProductImg">
+                    </td>
+                    <td class="orderProductDescTd">
+                        <div class="orderProductDescDiv">
+                            <a href="#" class="orderProductDescLink">ULIFE原创信封包男个性真皮手包男士手拿包休闲男包手抓包拉链</a>
+
+                            <div class="rightsImgDiv">
+                                <img src="../../img/site/creditcard.png" alt="" title="支持信用卡支付" class="rightsImg">
+                                <img src="../../img/site/7day.png" alt="" title="消费者保障服务,承诺7天退货" class="rightsImg">
+                                <img src="../../img/site/promise.png" alt="" title="消费者保障服务,承诺如实描述" class="rightsImg">
+                            </div>
+                        </div>
+                    </td>
+                    <td class="unitPriceTd text-center">
+                        <div class="originalPriceItem">￥<span class="originalPrice">1,188.00</span></div>
+                        <div class="oromotionPriceItem">￥<span class="oromotionPrice">1,128.60</span></div>
+                    </td>
+                    <td class="orderNumTd text-center">
+                        <span class="orderNum">1</span>
+                    </td>
+                    <td class="realTotalCostTd text-center">
+                        <div class="realTotalCostWithFreightDiv">￥<span class="realTotalCostWithFreight">1,128.60</span></div>
+                        <div class="freightDiv">(含运费：￥<span class="freight">0.00</span>)</div>
+                    </td>
+                    <td class="operationBtnTd text-center">
+                        <a class="operationLink" href="#"><button class="operationBtn confirmBtn">确认收货</button></a>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
