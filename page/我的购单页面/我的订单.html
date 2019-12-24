@@ -174,29 +174,50 @@
             border-color: #C40000;
         }
 
-        button.confirmBtn{
+        button.confirmBtn,button.payConfirmBtn{
             border-width: 0px;
             background-color: #66B6FF;
             color: white;
             font-size: 12px;
             font-weight: bold;
         }
-        button.confirmBtn:hover{
+        button.confirmBtn:hover,button.payConfirmBtn:hover{
             background-color: #118ADB;
         }
 
     </style>
+
+    <script>
+        $(function () {
+            $("a[orderStatus]").click(function () {
+                //获取按键类型
+                let orderStatus = $(this).attr("orderStatus");
+
+                if ("all" === orderStatus){  //如果点击的是所有订单，则显示所有有的orderstatus属性的table
+                    $("table[orderstatus]").show();
+                } else {  //否则只显示对应的orderstatus属性相同的table
+                    $("table[orderstatus]").hide();
+                    $("table[orderstatus=" + orderStatus + "]").show();
+                }
+
+                //去掉之前的选中状态
+                $("div.selectedOrderType").removeClass("selectedOrderType");
+                //更新当前连接为选中状态
+                $(this).parent().addClass("selectedOrderType");
+            });
+        })
+    </script>
 
 </head>
 <body>
 
     <div class="boughtDiv">
         <div class="orderType">
-            <div class="selectedOrderType"><a href="#">所有订单</a></div>
-            <div><a href="#">待付款</a></div>
-            <div><a href="#">待发货</a></div>
-            <div><a href="#">待收款</a></div>
-            <div class="noRightborder"><a href="#">待评价</a></div>
+            <div class="selectedOrderType"><a orderStatus="all" href="#">所有订单</a></div>
+            <div><a orderStatus="waitPay" href="#">待付款</a></div>
+            <div><a orderStatus="waitDelivery" href="#">待发货</a></div>
+            <div><a orderStatus="waitConfirm" href="#">待收货</a></div>
+            <div class="noRightborder"><a orderStatus="waitReview" href="#">待评价</a></div>
             <div class="orderTypeLastOne"></div>
         </div>
         <div style="clear: both"></div>
@@ -216,7 +237,7 @@
 
         <div class="orderListDiv">
 
-            <table class="orderItemTable">
+            <table oid="946" orderstatus="waitReview" class="orderItemTable">
                 <tr class="orderItemTitleTr">
                     <td colspan="2" class="TimeAndOrderNoTd">
                         <span class="orderTimeSpan">2016-09-12 17:00:41</span>
@@ -264,7 +285,7 @@
                 </tr>
             </table>
 
-            <table class="orderItemTable">
+            <table oid="945" orderstatus="waitConfirm" class="orderItemTable">
                 <tr class="orderItemTitleTr">
                     <td colspan="2" class="TimeAndOrderNoTd">
                         <span class="orderTimeSpan">2016-09-12 17:00:33</span>
@@ -308,6 +329,102 @@
                     </td>
                     <td class="operationBtnTd text-center">
                         <a class="operationLink" href="#"><button class="operationBtn confirmBtn">确认收货</button></a>
+                    </td>
+                </tr>
+            </table>
+
+            <table oid="944" orderstatus="waitDelivery" class="orderItemTable">
+                <tr class="orderItemTitleTr">
+                    <td colspan="2" class="TimeAndOrderNoTd">
+                        <span class="orderTimeSpan">2016-09-12 17:00:16</span>
+                        <span class="orderNoSpan">订单号：<span class="orderNo">201609121700167279660</span></span>
+                    </td>
+                    <td colspan="2" class="TmallMarketImgTd">
+                        <img src="../../img/site/orderItemTmall.png" alt="" class="tmallMarketImg">天猫商场
+                    </td>
+                    <td class="wangwangTd"><a href="#" class="wangwangLink">
+                        <div class="wangwangGif"></div></a>
+                    </td>
+                    <td class="orderItemDeleteTD">
+                        <a href="#" class="deleteOrderLink"><span class="glyphicon glyphicon-trash"></span></a>
+                    </td>
+                </tr>
+                <tr class="orderItemInfoTr">
+                    <td class="orderProductImgTd">
+                        <img src="../../img/productSingle_middle/8697.jpg" alt="" class="orderProductImg">
+                    </td>
+                    <td class="orderProductDescTd">
+                        <div class="orderProductDescDiv">
+                            <a href="#" class="orderProductDescLink">2016夏季新款女装雪纺衫短裤两件套 韩版时尚名媛休闲套装女夏装</a>
+
+                            <div class="rightsImgDiv">
+                                <img src="../../img/site/creditcard.png" alt="" title="支持信用卡支付" class="rightsImg">
+                                <img src="../../img/site/7day.png" alt="" title="消费者保障服务,承诺7天退货" class="rightsImg">
+                                <img src="../../img/site/promise.png" alt="" title="消费者保障服务,承诺如实描述" class="rightsImg">
+                            </div>
+                        </div>
+                    </td>
+                    <td class="unitPriceTd text-center">
+                        <div class="originalPriceItem">￥<span class="originalPrice">263.00</span></div>
+                        <div class="oromotionPriceItem">￥<span class="oromotionPrice">236.70</span></div>
+                    </td>
+                    <td class="orderNumTd text-center">
+                        <span class="orderNum">1</span>
+                    </td>
+                    <td class="realTotalCostTd text-center">
+                        <div class="realTotalCostWithFreightDiv">￥<span class="realTotalCostWithFreight">236.70</span></div>
+                        <div class="freightDiv">(含运费：￥<span class="freight">0.00</span>)</div>
+                    </td>
+                    <td class="operationBtnTd text-center">
+                        <span>待发货</span>
+                    </td>
+                </tr>
+            </table>
+
+            <table oid="943" orderstatus="waitPay" class="orderItemTable">
+                <tr class="orderItemTitleTr">
+                    <td colspan="2" class="TimeAndOrderNoTd">
+                        <span class="orderTimeSpan">2016-09-12 17:00:09</span>
+                        <span class="orderNoSpan">订单号：<span class="orderNo">201609121700098025374</span></span>
+                    </td>
+                    <td colspan="2" class="TmallMarketImgTd">
+                        <img src="../../img/site/orderItemTmall.png" alt="" class="tmallMarketImg">天猫商场
+                    </td>
+                    <td class="wangwangTd"><a href="#" class="wangwangLink">
+                        <div class="wangwangGif"></div></a>
+                    </td>
+                    <td class="orderItemDeleteTD">
+                        <a href="#" class="deleteOrderLink"><span class="glyphicon glyphicon-trash"></span></a>
+                    </td>
+                </tr>
+                <tr class="orderItemInfoTr">
+                    <td class="orderProductImgTd">
+                        <img src="../../img/productSingle_middle/5266.jpg" alt="" class="orderProductImg">
+                    </td>
+                    <td class="orderProductDescTd">
+                        <div class="orderProductDescDiv">
+                            <a href="#" class="orderProductDescLink">米纳专柜新款女式手表时尚简约陶瓷表女士手表女表正品防水石英表</a>
+
+                            <div class="rightsImgDiv">
+                                <img src="../../img/site/creditcard.png" alt="" title="支持信用卡支付" class="rightsImg">
+                                <img src="../../img/site/7day.png" alt="" title="消费者保障服务,承诺7天退货" class="rightsImg">
+                                <img src="../../img/site/promise.png" alt="" title="消费者保障服务,承诺如实描述" class="rightsImg">
+                            </div>
+                        </div>
+                    </td>
+                    <td class="unitPriceTd text-center">
+                        <div class="originalPriceItem">￥<span class="originalPrice">1,880.00</span></div>
+                        <div class="oromotionPriceItem">￥<span class="oromotionPrice">1,316.00</span></div>
+                    </td>
+                    <td class="orderNumTd text-center">
+                        <span class="orderNum">1</span>
+                    </td>
+                    <td class="realTotalCostTd text-center">
+                        <div class="realTotalCostWithFreightDiv">￥<span class="realTotalCostWithFreight">1,316.00</span></div>
+                        <div class="freightDiv">(含运费：￥<span class="freight">0.00</span>)</div>
+                    </td>
+                    <td class="operationBtnTd text-center">
+                        <a href="#"><button class="operationBtn payConfirmBtn">付款</button></a>
                     </td>
                 </tr>
             </table>
