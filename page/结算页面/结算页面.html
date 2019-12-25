@@ -32,7 +32,7 @@
             margin: 20px 5px;
         }
 
-        .addressTip{
+        .addressTip,.confirmOrderInfoTip{
             font-size: 16px;
             font-weight: bold;
             color: #333333;
@@ -59,6 +59,148 @@
             vertical-align: top;
         }
 
+        table.orderInfoTable{
+            width: 100%;
+        }
+
+        .tmallImg{
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: -2px;
+            margin-right: 5px;
+        }
+
+        .wangwangLink{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 4px;
+            left: 5px;
+        }
+        .wangwangGif{
+            width: 100%;
+            height: 100%;
+            background: transparent url("../../img/site/wangwang.gif") no-repeat scroll -80px 0px;
+        }
+
+        tr.orderTitleTr th{
+            padding-bottom: 5px;
+        }
+
+        tr.rowBorder td{
+            height: 3px;
+            background-color: #b2d1ff;
+            border-right: 3px solid white;
+        }
+
+        .sumPriceTd{
+            color: #C40000;
+            font-weight: bold;
+        }
+
+        img.orderItemImg{
+            width: 50px;
+            height: 50px;
+        }
+
+        tr.orderItemTR td{
+            padding: 10px 0px;
+        }
+
+        .orderProductDescLink{
+            color: #666666;
+        }
+
+        img.rightsImg{
+            height: 16px;
+            width: 16px;
+        }
+
+        td.border-bottom-td{
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .messageAndTotalPriceEachShopDiv{
+            height: 50px;
+            position: relative;
+            top: -1px;
+            background-color: #F2F6FF;
+            border-top: 2px solid #B4D0FF;
+        }
+
+        .messageDiv{
+            /*vertical-align: top;*/
+            display: inline-block;
+            /*position: relative;*/
+        }
+
+        .totalPriceEachShopDiv{
+            display: inline-block;
+            float: right;
+        }
+
+        .msgLabel{
+            position: relative;
+            top: -18px;
+            margin-left: 5px;
+            color: #999999;
+            font-weight: normal;
+        }
+
+        textarea.form-control{
+            margin-top: 7px;
+            display:inline-block;
+            width: auto;
+        }
+
+
+        .totalPriceEachShopDiv{
+            color: #999999;
+            position: relative;
+            top: 10px;
+            margin-right: 10px;
+        }
+
+        .totalPriceOfAllShopDiv{
+            text-align: right;
+            margin: 40px 40px 40px 0px;
+            color: #999999;
+        }
+
+        .totalPriceOfAllShopSpan{
+            color: #C40000;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .submitOrderBtnDiv{
+            text-align: right;
+            margin-right: 40px;
+            margin-bottom: 40px;
+        }
+
+        button.submitOrderBtn{
+            display: inline-block;
+            width: 160px;
+            height: 40px;
+            background-color: #C40000;
+            border: 1px solid #C40000;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        button.submitOrderBtn:hover{
+            background-color: #AB0000;
+        }
+
+        select.deliverySelect{
+            position: relative;
+            top: 2px;
+            border-radius: 3px;
+        }
     </style>
 
     <script>
@@ -98,6 +240,92 @@
                     </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+        <div class="confirmOrderInfoTip">确认订单信息</div>
+        <div>
+            <table class="orderInfoTable">
+                <thead class="orderInfoTableThead">
+                    <tr class="orderTitleTr">
+                        <th colspan="2">
+                            <img class="tmallImg" src="../../img/site/tmallbuy.png" alt="">
+                            <a class="tmallShopLink" href="#">店铺：天猫店铺</a>
+                            <a class="wangwangLink" href="#"><div class="wangwangGif"></div></a>
+                        </th>
+                        <th class="text-center" width="100px">单价</th>
+                        <th class="text-center" width="100px">数量</th>
+                        <th class="text-center" width="140px">小计</th>
+                        <th class="text-center" width="180px">配送方式</th>
+                    </tr>
+                    <tr class="rowBorder">
+                        <td colspan="2"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody class="orderInfoTableTbody">
+                    <tr class="orderItemTR">
+                        <td>
+                            <img class="orderItemImg" src="../../img/productSingle_middle/4206.jpg" alt="">
+                        </td>
+                        <td class="border-bottom-td">
+                            <a class="orderProductDescLink" href="#">Philips/飞利浦 HR1897/30破壁微榨原汁机 多功能家用果汁榨汁机</a>
+                            <div class="rightsImgDiv">
+                                <img src="../../img/site/creditcard.png" alt="" class="rightsImg" title="支持信用卡支付">
+                                <img src="../../img/site/7day.png" alt="" class="rightsImg" title="消费者保障服务,承诺7天退货">
+                                <img src="../../img/site/promise.png" alt="" class="rightsImg" title="消费者保障服务,承诺如实描述">
+                            </div>
+                        </td>
+                        <td class="unitPriceTd text-center border-bottom-td">￥<span class="unitPrice">3,514.05</span></td>
+                        <td class="text-center border-bottom-td"><span class="num">2</span></td>
+                        <td class="sumPriceTd text-center border-bottom-td">￥<span class="sumPrice">7,028.10</span></td>
+                        <td class="orderDeliveryTD" rowspan="2">
+                            <span>
+                                <input type="radio" checked="checked">普通配送
+                            </span>
+
+                            <select class="deliverySelect">
+                                <option selected="selected" value="">快递 免运费</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="orderItemTR">
+                        <td>
+                            <img class="orderItemImg" src="../../img/productSingle_middle/3796.jpg" alt="">
+                        </td>
+                        <td class="border-bottom-td">
+                            <a class="orderProductDescLink" href="#">公众智能扫地机器人家用全自动电动清洁地毯擦拖地一体机吸尘器</a>
+                            <div class="rightsImgDiv">
+                                <img src="../../img/site/creditcard.png" alt="" class="rightsImg" title="支持信用卡支付">
+                                <img src="../../img/site/7day.png" alt="" class="rightsImg" title="消费者保障服务,承诺7天退货">
+                                <img src="../../img/site/promise.png" alt="" class="rightsImg" title="消费者保障服务,承诺如实描述">
+                            </div>
+                        </td>
+                        <td class="unitPriceTd text-center border-bottom-td">￥<span class="unitPrice">2,124.15</span></td>
+                        <td class="text-center border-bottom-td"><span class="num">1</span></td>
+                        <td class="sumPriceTd text-center border-bottom-td">￥<span class="sumPrice">2,124.15</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="messageAndTotalPriceEachShopDiv">
+                <div class="messageDiv">
+                    <label class="msgLabel" for="messageTextarea">给卖家留言：</label>
+                    <textarea placeholder="选填：对本次交易的说明（建议填写已与卖家沟通好的内容）" class="form-control" name="message" id="messageTextarea" cols="60" rows="1"></textarea>
+                </div>
+                <div class="totalPriceEachShopDiv">
+                    店铺合计（含运费）：￥<span class="totalPriceEachShop">9,152.25</span>
+                </div>
+            </div>
+
+            <div class="totalPriceOfAllShopDiv">
+                实付款：<span class="totalPriceOfAllShopSpan">￥<span class="totalPriceOfAllShop">9,152.25</span></span>
+            </div>
+            <div class="submitOrderBtnDiv">
+                <button class="submitOrderBtn" type="button">提交订单</button>
             </div>
         </div>
 
