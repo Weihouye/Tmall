@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="../../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+    <style>
+        .aliPaySuccess{
+            max-width: 1013px;
+            margin: 20px auto;
+            border: 1px solid #D4D4D4;
+        }
+
+        .title{
+            background-color: #ecffdc;
+            padding-left: 20px;
+            line-height: 60px;
+        }
+
+        .successText{
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .payedAddressInfo{
+            margin: 26px 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px dotted #D4D4D4;
+        }
+
+        .payedAddressInfo li{
+            list-style-type: square;
+            padding-top: 5px;
+            padding-left: 15px;
+            color: #333333 ;
+        }
+
+        .realPayWithUnit{
+            color: #B10000;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .orderLink{
+            margin: 26px 23px 0px 23px;
+        }
+
+        .warningDiv{
+            margin: 0px 35px 26px 35px;
+        }
+
+        .warningText{
+            color: #C40000;
+            font-weight: bold;
+        }
+
+        .orderLink a{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="aliPaySuccess">
+        <div class="title">
+            <img src="../../img/site/paySuccess.png" alt="" class="successLogo">
+            <span class="successText">您已成功付款</span>
+        </div>
+
+        <div class="payedAddressInfo">
+            <ul>
+                <li>收获地址：北京市 朝阳区 天安门 3栋 2单元 402室 </li>
+                <li>实付款：<span class="realPayWithUnit">￥<span class="realPay">2,124.15</span></span></li>
+                <li>预计<span class="arriveDate">08月08日</span>送达</li>
+            </ul>
+            <div class="orderLink">
+                您可以 <a href="#">查看已买到的宝贝</a> <a href="#">查看交易详情</a>
+            </div>
+        </div>
+
+        <div class="warningDiv">
+            <img src="../../img/site/warning.png" alt="" class="warningLogo">
+            <strong>安全提醒：</strong>
+            下单后，<span class="warningText">用QQ给您发送链接办理退款的都是骗子！</span>天猫不存在系统升级，订单异常等问题，谨防假冒客服电话诈骗！
+        </div>
+
+    </div>
+</body>
+</html>

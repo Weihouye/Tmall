@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="../../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+    <style>
+        .loginPageDiv{
+            max-width: 1190px;
+            margin: 0 auto;
+        }
+        .tmallLogoDiv{
+            padding: 32px 0;
+        }
+
+        .loginForm{
+            background-color: white;
+            padding: 60px 25px 80px;
+            position: relative;
+            top: -520px;
+            left: 750px;
+            z-index: 2;
+            width: 350px;
+            height: 400px;
+        }
+
+        .loginTitle{
+            color: #3c3c3c;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .usernameDiv,.passwordDiv{
+            border: 1px solid #CBCBCB;
+            padding: 0 0 1px 1px;
+            margin: 20px 0px;
+        }
+
+        .loginForm .logoDiv{
+            display: inline-block;
+            width: 40px;
+            line-height: 40px;
+            background-color: #CBCBCB;
+            text-align: center;
+        }
+        .logoDiv .glyphicon{
+            font-size: 18px;
+        }
+
+        input.username,input.password{
+            width: 244px;
+            height: 30px;
+            border: 0px;
+        }
+
+        .loginForm a{
+            color: #999999;
+            text-decoration: none;
+        }
+
+        .loginForm a:hover{
+            color: #C40000;
+        }
+
+        .loginBtnDiv{
+            margin-top: 20px;
+        }
+
+        .loginBtn{
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: 0px;
+            width: 100%;
+            height: 40px;
+            background-color: #C40000;
+            border-radius: 3px;
+        }
+
+        .loginBtn:hover{
+            color: black;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="loginPageDiv">
+        <div class="tmallLogoDiv">
+            <img src="../../img/site/simpleLogo.png" alt="" class="tmallLogo">
+        </div>
+
+        <div class="loginInputDiv">
+            <img src="../../img/site/loginBackground.png" alt="" class="loginBackground">
+            <div class="loginForm">
+                <div class="loginTitle">账号登录</div>
+                <div class="usernameDiv">
+                    <div class="logoDiv"><span class="glyphicon glyphicon-user"></span></div>
+                    <input placeholder="手机/会员名/邮箱" type="text" class="username" name="username">
+                </div>
+                <div class="passwordDiv">
+                    <div class="logoDiv"><span class="glyphicon glyphicon-lock"></span></div>
+                    <input placeholder="密码" type="password" name="password" class="password">
+                </div>
+                <a class="forgetPasswordLink">忘记登录密码</a>
+                <a class="registerLink pull-right">免费注册</a>
+                <div class="loginBtnDiv">
+                    <button class="loginBtn" type="button">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

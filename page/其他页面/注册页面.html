@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="../../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+    <style>
+        .registerDiv{
+            max-width: 1013px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .registerTable{
+            margin: auto;
+        }
+
+        .registerTable td{
+            padding: 12px 25px;
+        }
+
+        .title{
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .titleNotBold{
+            font-weight: normal;
+        }
+
+        .submitBtn{
+            width: 170px;
+            height: 36px;
+            border-radius: 2px;
+            background-color: #C40000;
+            font-size: 16px;
+            color: white;
+            border: 0px;
+        }
+
+        .username,.password,.passwordAck{
+            width: 312px;
+            height: 36px;
+            border-radius: 2px;
+            border: 1px solid #DEDEDE;
+        }
+    </style>
+</head>
+<body>
+    <div class="registerDiv">
+        <table class="registerTable">
+            <tbody>
+                <tr>
+                    <td class="pull-right title" colspan="2">设置会员名</td>
+                </tr>
+                <tr>
+                    <td class="pull-right">登录名</td>
+                    <td><input placeholder="会员名一旦设置成功，无法修改" type="text" class="username"></td>
+                </tr>
+                <tr>
+                    <td class="pull-right title">设置登录密码</td>
+                    <td class="titleNotBold" style="text-align: left">登陆时验证，保护账号信息</td>
+                </tr>
+                <tr>
+                    <td class="pull-right">登录密码</td>
+                    <td><input placeholder="设置你的登陆密码" type="password" class="password"></td>
+                </tr>
+                <tr>
+                    <td class="pull-right">密码确认</td>
+                    <td><input placeholder="请再次输入你的密码" type="password" class="passwordAck"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button class="submitBtn">提交</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

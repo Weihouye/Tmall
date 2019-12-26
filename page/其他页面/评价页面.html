@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="../../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+    <style>
+        .addReviewDiv{
+            max-width: 1013px;
+            margin: 20px auto;
+        }
+
+        .productInfoDiv{
+            width: 100%;
+        }
+
+        .productImgDiv{
+            float: left;
+            padding: 5px 30px;
+            border: 1px solid #E7E7E7;
+        }
+
+        img.productImg{
+            width: 400px;
+            height: 400px;
+        }
+
+        .orderInfoDiv{
+            overflow: hidden;
+            border-top: 1px solid #E7E7E7;
+            padding: 35px 25px;
+        }
+
+        .orderInfoDiv .productLinkDiv{
+            /*margin: 30px 20px ;*/
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .orderInfoListDiv{
+            margin: 20px 0px;
+        }
+        .orderInfoListDiv ul{
+            padding-left: 10px;
+        }
+
+        .orderInfoListDiv li{
+            list-style-type: none;
+            margin-bottom: 15px;
+        }
+
+        .priceWithUnit,.deliverType{
+            margin-left: 40px;
+        }
+
+        .priceWithUnit{
+            font-size: 20px;
+            font-weight: bold;
+            color: #C40000;
+        }
+
+        .saleNum{
+            margin-left: 27px;
+            color: #C40000;
+            font-weight: bold;
+        }
+
+        .buyDateDiv{
+            background-color: #FDFBFA;
+            border: 1px solid #F6F5F3;
+            padding: 16px 0px 16px 80px;
+            height: 166px;
+        }
+
+        .buyDateImgLogoSpan{
+            display: inline-block;
+            border: 1px solid #E1E1E1;
+            background-color: white;
+            width: 30px;
+            height: 45px;
+            text-align: center;
+        }
+
+        .buyDateTextSpan{
+            display: inline-block;
+            height: 45px;
+            padding: 5px;
+            font-size: 12px;
+            color: #666666;
+            width: 230px;
+            border:1px solid #EFEFEF;
+            position: relative;
+            top: 13px;
+            left: -5px;
+        }
+        .reviewBottomDiv{
+            clear: both;
+            margin-top: 30px;
+        }
+
+        .reviewTitleDiv{
+            border: 1px solid #E7E7E7;
+            border-top: 0px;
+            background-color: #F6F5F1;
+            height: 45px;
+        }
+
+        .reviewTab{
+            display: inline-block;
+            text-align: center;
+            height: 32px;
+            width: 150px;
+            border-right: 1px solid #E7E7E7;
+            font-weight: bold;
+        }
+
+        .redLine{
+            position: relative;
+            left: -1px;
+            top: -1px;
+            z-index: 99;
+            width: 151px;
+            border-top: 6px solid #C40000;
+            margin-bottom: 7px;
+        }
+
+        .reviewNum{
+            color: #284CA5;
+        }
+
+        .titleBlank{
+            position: relative;
+            top: -37px;
+            left: 150px;
+            display: inline-block;
+            border-bottom: 1px solid #E7E7E7;
+            background-color: white;
+            height: 37px;
+            width: calc(100% - 149px);
+        }
+
+        .reviewInputDiv{
+            border: 1px solid #E7E7E7;
+            border-bottom: 0px;
+            margin-top: 20px;
+            background-color: #EFEFEF;
+            padding: 40px;
+        }
+
+        .reviewTip{
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        table.makeReviewTable{
+            border: 1px solid #E7E7E7;
+        }
+
+        table.makeReviewTable td:first-child{
+            border-right: 1px solid #E7E7E7;
+        }
+
+        table.makeReviewTable td{
+            display: table-cell;
+            background-color: white;
+            vertical-align: middle;
+            padding: 5px;
+        }
+
+        #reviewContent{
+            border: 0px;
+            resize: none;
+            position: relative;
+            top: 2px;
+        }
+
+        .makeReviewButtonDiv{
+            background-color: #EFEFEF;
+            padding-bottom: 30px;
+            border: 1px solid #E7E7E7;
+            border-top: 0px;
+        }
+        .whiteBackground{
+            padding: 15px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .whiteBackground button{
+            width: 72px;
+            height: 26px;
+            background-color: #C40000;
+            color: white;
+            font-weight: bold;
+            border: 0px;
+            border-radius: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="addReviewDiv">
+
+        <div class="productInfoDiv clearfix">
+            <div class="productImgDiv">
+                <img src="../../img/productSingle/8697.jpg" alt="" class="productImg">
+            </div>
+
+            <div class="orderInfoDiv">
+                <div class="productLinkDiv">
+                    2016夏季新款女装雪纺衫短裤两件套 韩版时尚名媛休闲套装女夏装
+                </div>
+
+                <div class="orderInfoListDiv">
+                    <ul>
+                        <li>价格<span class="priceWithUnit">￥<span class="price">263.00</span></span>元</li>
+                        <li>配送<span class="deliverType">快递：<span class="deliverCost">0.00</span></span></li>
+                        <li>月销量<span class="saleNum">50</span>件</li>
+                    </ul>
+                </div>
+
+                <div class="buyDateDiv">
+                    <span class="buyDateImgLogoSpan"><img src="../../img/site/reviewLight.png" alt="" class="buyDateImgLogo"></span>
+                    <span class="buyDateTextSpan">现在查看的是 您所购买商品的信息于<span class="buyDate">2016年09月12日</span>下单购买了此商品</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="reviewBottomDiv">
+            <div class="reviewTitleDiv">
+                <div class="reviewTab">
+                    <div class="redLine"></div>
+                    累计评价 <span class="reviewNum">13</span>
+                </div>
+                <div class="titleBlank"></div>
+            </div>
+
+            <div class="reviewInputDiv">
+                <div class="reviewTip">其他买家，需要你的建议哦！</div>
+                <table class="makeReviewTable">
+                    <tbody>
+                        <tr>
+                            <td>评价商品</td>
+                            <td><textarea name="content" id="reviewContent" cols="80" rows="7"></textarea></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="makeReviewButtonDiv">
+                <div class="whiteBackground">
+                    <!--<input type="hidden" value="256" name="pid">-->
+                    <!--<input type="hidden" value="952" name="oid">-->
+                    <button type="button">提交评价</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

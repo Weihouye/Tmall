@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="../../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+    <style>
+        body{
+            font-size:12px;
+            font-family: Arial;
+        }
+
+        .confirmReceiptPageDiv{
+            max-width: 1013px;
+            margin: 20px auto;
+        }
+
+        .orderStatusFlowDiv{
+            text-align: center;
+            position: relative;
+        }
+
+        .timeDiv{
+            float: left;
+            margin: 30px 0px;
+            position: relative;
+            color: #999999;
+        }
+
+        .submitOrderTime{
+            left: 30px;
+        }
+
+        .payOrderTime{
+            left: 130px;
+        }
+
+        .deliverOrderTime{
+            left: 230px;
+        }
+
+        .confirmTextDiv{
+            margin: 10px 30px 0px 30px;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ADC8E6;
+        }
+
+        .productInfoDiv{
+            margin: 25px 40px 20px 40px;
+        }
+
+        .title{
+            margin: 0px 10px 20px 10px;
+            color: black;
+            font-size: 14px;
+        }
+
+        table.orderInfoTable{
+            border: 1px solid #DDDDDD;
+            width: 100%;
+        }
+
+        table.orderInfoTable thead{
+            border: 1px solid #DDDDDD;
+            background-color: #E8F2FF;
+        }
+
+        table.orderInfoTable tbody tr:not(:last-child){
+            border-bottom: 1px solid #DDDDDD;
+        }
+
+        table.orderInfoTable thead th{
+            text-align: center;
+            line-height: 40px;
+            font-size: 14px;
+        }
+
+        img.productInfoImg{
+            width: 50px;
+            height: 50px;
+        }
+
+        td.productInfoImgTd{
+            padding: 20px;
+        }
+
+        .totalPriceWithUnit{
+            color: #666666;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .realCostForAllDiv{
+            margin: 10px 60px;
+        }
+
+        .realCostForAllSpan{
+            float: right;
+            font-size: 14px;
+        }
+
+        .realCostWithUnit{
+            color: #C40000;
+        }
+
+        .productInfoDesc{
+            color: #999999;
+        }
+
+        .productInfoDesc:hover{
+            color: #C40000;
+        }
+
+        .orderInfoDiv{
+            margin: 20px 30px 50px 30px;
+            border-top: 1px solid #ADC8E6;
+        }
+
+        .orderInfoDiv ul{
+            padding-left: 10px;
+            margin-top: 15px;
+        }
+
+        .orderInfoDiv li{
+            list-style-type: none;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /*li.orderNoLi{*/
+            /*position: relative;*/
+        /*}*/
+
+        li.orderNoLi img{
+            position: relative;
+            margin-left: 10px;
+            width: 20px;
+            top: -3px;
+        }
+
+        a.wangwangGifLink{
+            margin-left: 10px;
+        }
+
+        span.confirmPayOrderDetailWangWangGif{
+            display: inline-block;
+            height: 20px;
+            width: 70px;
+            background: transparent url("../../img/site/wangwang.gif") no-repeat;
+            position: relative;
+            top: 2px;
+        }
+
+        .warningAndConfirmBtnDiv{
+            margin: 0px 30px 30px 30px;
+            border: 1px solid #F58B0F;
+        }
+
+        .warningText{
+            margin: 20px 80px;
+            font-size: 18px;
+            color: red;
+            font-weight: bold;
+        }
+
+        .confirmPayBtn{
+            margin: 20px 80px;
+            width: 67px;
+            height: 30px;
+            border: 1px solid #E67C00;
+            background-color: #F4A21D;
+            border-radius: 3px;
+            color: white;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="confirmReceiptPageDiv">
+
+        <div class="orderStatusFlowDiv">
+            <img src="../../img/site/comformPayFlow.png" alt="" class="orderStatusFlowImg">
+            <div>
+                <div class="timeDiv submitOrderTime">2016-09-14 11:14:45</div>
+                <div class="timeDiv payOrderTime">2016-09-14 11:14:47</div>
+                <div class="timeDiv deliverOrderTime">2016-09-14 17:34:41</div>
+
+                <div style="clear: both"></div>
+            </div>
+        </div>
+
+        <div class="confirmTextDiv">我已收到货，同意支付宝付款</div>
+
+        <div class="productInfoDiv">
+            <div class="title">订单信息</div>
+
+            <table class="orderInfoTable">
+                <thead>
+                    <tr>
+                        <th colspan="2">宝贝</th>
+                        <th width="100px">单价</th>
+                        <th width="100px">数量</th>
+                        <th width="170px">商品总价</th>
+                        <th width="100px">运费</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="productInfoItem">
+                        <td class="productInfoImgTd">
+                            <img src="../../img/productSingle_middle/5848.jpg" alt="" class="productInfoImg">
+                        </td>
+                        <td>
+                            <a href="#" class="productInfoDesc">罗宾 钢带女表 女士腕表 水钻夜光防水石英表 潮流时尚复古手表女</a>
+                        </td>
+                        <td class="text-center"><span class="unitPriceWithUnit">￥<span class="unitPrice">792.00</span></span></td>
+                        <td class="text-center num">1</td>
+                        <td class="text-center"><span class="totalPriceWithUnit">￥<span class="totalPrice">792.00</span></span></td>
+                        <td class="text-center">快递：￥<span class="deliveryCost">0.00</span></td>
+                    </tr>
+
+                    <tr class="productInfoItem">
+                        <td class="productInfoImgTd">
+                            <img src="../../img/productSingle_middle/3676.jpg" alt="" class="productInfoImg">
+                        </td>
+                        <td>
+                            <a href="#" class="productInfoDesc">科沃斯地宝凌云扫地机器人WiFi智能家用吸尘器超薄全自动洗擦地机</a>
+                        </td>
+                        <td class="text-center"><span class="unitPriceWithUnit">￥<span class="unitPrice">5,680.00</span></span></td>
+                        <td class="text-center num">1</td>
+                        <td class="text-center"><span class="totalPriceWithUnit">￥<span class="totalPrice">5,680.00</span></span></td>
+                        <td class="text-center">快递：￥<span class="deliveryCost">0.00</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="realCostForAllDiv">
+            <span class="realCostForAllSpan">实付款：
+                <span class="realCostWithUnit">￥<span class="realCost">4,484.00</span></span>
+            </span>
+            <div style="clear: both"></div>
+        </div>
+
+        <div class="orderInfoDiv">
+            <ul>
+                <li class="orderNoLi">订单编号：<span class="orderNo">201609141114454899001</span><img src="../../img/site/confirmOrderTmall.png" alt=""></li>
+                <li>卖家昵称：<span class="alias">天猫商铺</span><a href="#" class="wangwangGifLink"><span class="confirmPayOrderDetailWangWangGif"></span></a></li>
+                <li>收货信息：<span class="addressAndPhone">北京市 朝阳区 天安门 4栋二单元 490，朝阳群众， 15800000000，10000</span></li>
+                <li>成交时间：<span class="dealTime">2016-09-14 11:14:45</span></li>
+            </ul>
+        </div>
+
+        <div class="warningAndConfirmBtnDiv">
+            <div class="warningText">请收到货后，再确认收货！否则您可能钱货两空！</div>
+            <button class="confirmPayBtn" type="button">确认支付</button>
+        </div>
+    </div>
+
+</body>
+</html>

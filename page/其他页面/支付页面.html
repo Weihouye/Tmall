@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="../../css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+    <style>
+        .aliPayPageDiv{
+            max-width: 1013px;
+            margin: 50px auto;
+        }
+
+        .priceDiv,.payBtnDiv{
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .payImgDiv{
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .payMoneyText,.payMoneyWithUnit{
+            display: block;
+        }
+
+        .payMoneyText {
+            color: #4D4D4D;
+        }
+
+        .payMoneyWithUnit{
+            color: #FF6600;
+            font-size: 20px;
+            font-weight: bold;
+            padding-right: 17px;
+            margin-top: 10px;
+        }
+
+        .payBtn{
+            width: 107px;
+            height: 31px;
+            color: white;
+            background-color: #00AAEE;
+            border: 1px solid #00AAEE;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="aliPayPageDiv">
+        <div class="aliPayPageLogo">
+            <img src="../../img/site/simpleLogo.png" alt="">
+            <div style="clear: both"></div>
+        </div>
+
+        <div class="priceDiv">
+            <span class="payMoneyText">扫一扫付款（元）</span>
+            <span class="payMoneyWithUnit">￥<span class="payMoney">1,359.20</span></span>
+        </div>
+
+        <div class="payImgDiv">
+            <img src="../../img/site/alipay2wei.png" alt="" class="payImg">
+        </div>
+
+        <div class="payBtnDiv">
+            <button class="payBtn" type="button">确认支付</button>
+        </div>
+    </div>
+
+</body>
+</html>
